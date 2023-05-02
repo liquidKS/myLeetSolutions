@@ -1,0 +1,40 @@
+/* Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+An input string is valid if:
+
+Open brackets must be closed by the same type of brackets.
+Open brackets must be closed in the correct order.
+Every close bracket has a corresponding open bracket of the same type.
+ 
+
+Example 1:
+
+Input: s = "()"
+Output: true
+
+*/
+
+class Solution {
+public:
+    bool isValid(string s) {
+        // holds values for a Last In First Out
+        stack <char> brackets;
+
+        for (int i = 0; i < s.size(); ++i){
+            char firstChar = s[i];
+            if (firstChar == '(' || firstChar == '{' || firstChar == '['){
+                //.push to be checked for closing
+                brackets.push(firstChar);
+            }
+            else{
+              //checks if bracket is a closing one and checks brackets.top if it is a repeating bracket then return false
+                if (brackets.empty() || (firstChar == ')' && brackets.top() != '(') || (firstChar == '}' && brackets.top() != '{') || (firstChar == ']' && brackets.top() != '[')) {
+                    return false;
+                }
+                //if its just a closing bracket and is valid , brackets.pop.
+                brackets.pop();
+            }
+        }
+        return brackets.empty();
+    }
+};
