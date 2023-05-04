@@ -1,4 +1,4 @@
-# myLeetSolutions
+# myLeetSolutions C++
 
 
-LeetCode Solutions Blind 75 Top Interview Questions (EASY)
+LeetCode Solutions Top Interview Questions (EASY)
