@@ -20,6 +20,7 @@ public:
         string commonPrefix = "";
         // iterate over first word to determine common prefix
         for (int i = 0; i < strs[0].size(); ++i){
+        // access every character in first index word
             char newString = strs[0][i];
             for (string s : strs){
                 if (newString == s[i]){
